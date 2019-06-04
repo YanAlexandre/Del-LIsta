@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Apaga item de uma lista</h1>
+    <ul></ul>
+
+
+    <script>
+        var itens = [
+            {name: "item 1"},
+            {name: "item 2"},
+            {name: "item 5"},
+            {name: "item 7"},
+            {name: "item 9"}
+        ];
+
+        var lista = document.querySelector("ul");
+        for(var i=0; i< itens.length; i++){
+            var nLi = document.createElement("li");
+            nLi.textContent = itens[i].name;
+            lista.appendChild(nLi);
+            nLi.addEventListener("click", itemClick);
+
+        }
+
+        function itemClick(e){
+            console.log("Item clicado ", e.srcElement.textContent);
+            console.log(e);
+            lista.removeChild(e.srcElement);
+        }
+
+    </script>
+
+    
+</body>
+</html>
